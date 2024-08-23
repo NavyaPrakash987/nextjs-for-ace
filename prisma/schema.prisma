@@ -13,14 +13,21 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+datasource appdb {
+  provider = "postgresql"
+  url      = env("APPDB_URL")
+}
+
 
 model User {
   id    Int    @id @default(autoincrement())
   name  String?
   email String? @unique
+  role   String
   password String?
   accounts Account[]
   sessions Session[]
+  @@client(db)
 }
 
 model Account {
@@ -30,6 +37,7 @@ model Account {
   providerId        String
   providerAccountId String
   user              User     @relation(fields: [userId], references: [id])
+  @@client(db)
 }
 
 model Session {
@@ -38,13 +46,56 @@ model Session {
   userId      Int
   expires     DateTime
   user        User     @relation(fields: [userId], references: [id])
+  @@client(db)
 }
 
 model Posts {
   id        Int      @id @default(autoincrement())
   title     String
   content   String
-  name      String
-  author    User     @relation(fields: [authorId], references: [id])
   createdAt DateTime @default(now())
+  @@client(appdb)
+}
+
+model Monetory_posts {
+  id        Int   @id @default(autoincrement())
+  awarded_by  String
+  awardee    String
+  award_type  String  @default(monetory)
+  award_name  String
+  points      Int
+  post_time   DateTime  @default(now())
+  desc1       String
+  desc2       String
+  desc3       String
+  desc4       String
+  @@client(appdb)
+  }
+
+model Non_Monetory_posts {
+  id        Int   @id @default(autoincrement())
+  awarded_by  String
+  awardee    String
+  award_type  String  @default(monetory)
+  award_name  String
+  points      Int
+  post_time   DateTime  @default(now())
+  desc1       String
+  @@client(appdb)
+}
+
+model Main_posts {
+  id        Int   @id @default(autoincrement())
+  awarded_by  String  
+  awardee    String
+  award_type  String
+  award_name  String
+  points      Int
+  post_time   DateTime
+  desc1       String
+  desc2       String
+  desc3       String
+  desc4       String
+  monetory    Boolean @default(false)
+  @@client(appdb)
 }

@@ -30,8 +30,8 @@ export const authOptions: NextAuthOptions = {
 
         if (user && user.password === credentials?.password) {
           return {
-          // id: user.id.toString(), // Convert id to string if it's a number
-          // name: user.name,
+          id: user.id.toString(), // Convert id to string if it's a number
+          name: user.name,
           email: user.email,
         } as CustomUser;
         } 
@@ -49,6 +49,7 @@ export const authOptions: NextAuthOptions = {
   session: {
     strategy: "jwt"
   },
+  
   pages: {
     signIn: '/auth/signin', // Custom login page
   },

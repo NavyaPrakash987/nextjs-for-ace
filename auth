@@ -1,0 +1,62 @@
+next- auth password decryption done -next-auth-secret
+
+fetching server side data :
+
+\mugil - username list  --------- done
+current user name 
+username with points
+
+add posts
+model, update js partial pre rendering
+
+
+sync AD authentication
+master table
+
+role based portal
+
+
+
+posts app data with new database
+metadata with new database
+
+
+created a nextjs project , for authentication next-auth using prisma, providers as credentials connected with postgres for temporary pupose main is to connect with microsoft Active Directory for authentication.
+now i have added another database through prisma for appdata, now i am trying to add posts just like in social media.
+help me with the process
+
+
+  const recognize = () =>{
+    redirect ('/recognize')
+    }
+  const getServerSideProps = async () => {
+      const users = await prisma.User.findMany()
+      console.log(users)
+    
+      return {props: { users } }  
+
+
+
+
+2 types of post 
+monetary and non monetory
+
+can i create a table out of two tables in postgres prisma connected nextjs
+yes
+create monetory posts and non monetory posts tables
+
+monetory posts table - fields: ID, Awardee, awarded by, type of award (default value monetory), points added, award name, date and time, Desc1, Desc2,Desc3,Desc4
+non monetory posts - fields: ID,Awardee, awarded by, type of award (default value non-monetory), points added, award name, date and time, description
+
+all the rows from monetory and non monetory posts should be added in posts table
+
+If you are using the App Router, try to avoid using the SessionProvider and use getServerSession instead to get access to the session object as using SessionProvider should be unnecessary in most cases. However, using the SessionProvider can be useful if you are migrating from the older pages router.
+
+
+NEXTAUTH_SECRET = "Dj4OenGToLB04EZY8r+WbCwLkK8dUe8zTFWaelxB+tY="
+
+DATABASE_URL = "postgres://navya_prakash:npci@12345@localhost:5432/authentication"
+
+APP_DATABASE_URL = "postgres://navya_prakash:npci@12345@localhost:5432/appdata"
+
+

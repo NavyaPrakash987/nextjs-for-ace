@@ -1,3 +1,4 @@
+"use client"
 import Link from "next/link"
 import { NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuLink } from "@/components/ui/navigation-menu"
 import Image from "next/image"

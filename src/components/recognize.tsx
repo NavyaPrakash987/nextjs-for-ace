@@ -4,9 +4,8 @@ import { Button } from '@/components/ui/button'
 import { Container } from 'lucide-react'
 import { useState } from 'react'
 import ImageUploader from 'react-images-upload'
-import styled from 'styled-components'
 
-const Recognize = () => {
+export default function Recognize() {
     const [uploadedPictures, setUploadedPictures] = useState([])
     const onDrop = (picture: File[] ) => {
         setUploadedPictures([...uploadedPictures, picture])
@@ -45,4 +44,3 @@ const Recognize = () => {
     )
   }
   
-  export default Recognize

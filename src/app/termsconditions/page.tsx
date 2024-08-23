@@ -1,3 +1,4 @@
+"use client"
 export default function termsconditions_page(){
     return (
         <main>

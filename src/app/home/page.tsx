@@ -1,9 +1,11 @@
+"use client"
 import Footers from "@/components/footer";
 import Headers from "@/components/header";
 import Component from "@/components/homecomp";
 import { getServerSession } from "next-auth";
 import authOptions from "../api/auth/[...nextauth]/authOptions";
 import { redirect } from "next/navigation";
+import SidePanel from "@/components/panel";
 
 export default async function home_page() {
     const session = await getServerSession(authOptions);
@@ -13,7 +15,7 @@ export default async function home_page() {
     return (
         <div>
             <Headers />
-            <Component />
+            <Component /><SidePanel />
             <Footers />
         </div>
         

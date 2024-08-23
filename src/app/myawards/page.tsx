@@ -1,3 +1,4 @@
+"use client"
 import Footers from "@/components/footer";
 import Headers from "@/components/header";
 import { getServerSession } from "next-auth";

@@ -1,3 +1,4 @@
+"use client"
 import RedeemComponent from "@/components/coupon_grid"
 import Footers from "@/components/footer"
 import Headers from "@/components/header"

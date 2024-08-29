@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
 import { HeartIcon, MessageCircleIcon, ShareIcon, TrendingUpIcon, UserIcon, AwardIcon, PenToolIcon } from "lucide-react"
+import SidePanel  from "./panel"
+import { useUser } from "@/app/context/usercontext"
 
 const CustomScrollArea = ({ children, className = "" }) => (
   <ScrollArea className={`h-full ${className}`}>
@@ -12,12 +14,15 @@ const CustomScrollArea = ({ children, className = "" }) => (
   </ScrollArea>
 )
 
-export default function Component() {
+export default function Feed() {
+  const { user } = useUser();
+  const current_username = user?.name
+
   return (
     <div>
       <main className="flex flex-1 overflow-hidden">
         <CustomScrollArea className="flex-1 p-6">
-          <h1 className="text-3xl font-bold mb-6">Welcome back, John!</h1>
+          <h1 className="text-3xl font-bold mb-6">Welcome back, {current_username}!</h1>
           <div className="space-y-6">
             {posts.map((post) => (
               <Card key={post.id} className="overflow-hidden">
@@ -57,7 +62,7 @@ export default function Component() {
             ))}
           </div>
         </CustomScrollArea>
-        
+        < SidePanel />
       </main>
     </div>
   )

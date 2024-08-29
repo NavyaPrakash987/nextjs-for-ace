@@ -24,6 +24,7 @@ model User {
   name  String?
   email String? @unique
   role   String
+  Level   String
   password String?
   accounts Account[]
   sessions Session[]
@@ -97,5 +98,14 @@ model Main_posts {
   desc3       String
   desc4       String
   monetory    Boolean @default(false)
+  @@client(appdb)
+}
+
+model Post {
+  id        Int    @id @default(autoincrement())
+  title     String
+  content   String
+  authorId  Int
+  author    User   @relation(fields: [authorId], references: [id])
   @@client(appdb)
 }

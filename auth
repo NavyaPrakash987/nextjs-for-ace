@@ -60,3 +60,10 @@ DATABASE_URL = "postgres://navya_prakash:npci@12345@localhost:5432/authenticatio
 APP_DATABASE_URL = "postgres://navya_prakash:npci@12345@localhost:5432/appdata"
 
 
+Select employee
+write a request to AD , for connection , and load list of users with their roles,
+
+
+
+
+

@@ -16,7 +16,8 @@ interface SidePanelProps {
   openModal:  () => void; // Explicitly define the type of openModal
 }
 
-export default function SidePanel<SidePanelProps> ({openModal}: SidePanelProps): JSX.Element {
+//<SidePanelProps> ({openModal}: SidePanelProps): JSX.Element 
+export default function SidePanel (){
 
   const { user } = useUser();
   const current_username = user?.name
@@ -57,11 +58,11 @@ return(
                   </CardContent>
                 </Card>
                 <div className="grid grid-cols-2 gap-4">
-                  <Button className="w-full" variant="secondary" onClick={openModal}>
+                  <Button className="w-full" variant="secondary">
                     <AwardIcon className="mr-2 h-4 w-4" />
                     Recognize Now
                   </Button>
-                  <Button className="w-full" variant="secondary" onClick={openModal} >
+                  <Button className="w-full" variant="secondary" >
                     <PenToolIcon className="mr-2 h-4 w-4" />
                     Post an Update
                   </Button>

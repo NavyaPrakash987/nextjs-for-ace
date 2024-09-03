@@ -5,11 +5,22 @@ import { Button } from "./ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "./ui/card";
 import { ScrollArea, ScrollBar } from "./ui/scroll-area";
 import { useUser } from "@/app/context/usercontext";
+import { useState } from "react";
 
-export default function SidePanel() {
+
+interface SidePanelProps {
+  openModal:  () => void;
+}
+
+interface SidePanelProps {
+  openModal:  () => void; // Explicitly define the type of openModal
+}
+
+export default function SidePanel<SidePanelProps> ({openModal}: SidePanelProps): JSX.Element {
 
   const { user } = useUser();
   const current_username = user?.name
+
     const CustomScrollArea = ({ children, className = "" }) => (
         <ScrollArea className={`h-full ${className}`}>
           {children}
@@ -46,11 +57,11 @@ return(
                   </CardContent>
                 </Card>
                 <div className="grid grid-cols-2 gap-4">
-                  <Button className="w-full" variant="secondary">
+                  <Button className="w-full" variant="secondary" onClick={openModal}>
                     <AwardIcon className="mr-2 h-4 w-4" />
                     Recognize Now
                   </Button>
-                  <Button className="w-full" variant="secondary">
+                  <Button className="w-full" variant="secondary" onClick={openModal} >
                     <PenToolIcon className="mr-2 h-4 w-4" />
                     Post an Update
                   </Button>

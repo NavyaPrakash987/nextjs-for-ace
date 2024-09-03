@@ -63,6 +63,76 @@ APP_DATABASE_URL = "postgres://navya_prakash:npci@12345@localhost:5432/appdata"
 Select employee
 write a request to AD , for connection , and load list of users with their roles,
 
+role based options , nominate now and nomination list (including sub fields) 
+
+notifications
+
+
+i donot have any posts, for now nothing is in my feed i dont find my side panel too
+
+verify if feed component is loading or not
+no not loading 
+ 
+ai
+
+
+model Monetory_posts {
+  id        Int   @id @default(autoincrement())
+  awarded_by  String
+  awardee    String
+  award_type  String  @default(monetory)
+  award_name  String
+  points      Int
+  post_time   DateTime  @default(now())
+  desc1       String
+  desc2       String
+  desc3       String
+  desc4       String
+  @@client(appdb)
+  }
+
+model Non_Monetory_posts {
+  id        Int   @id @default(autoincrement())
+  awarded_by  String
+  awardee    String
+  award_type  String  @default(monetory)
+  award_name  String
+  points      Int
+  post_time   DateTime  @default(now())
+  desc1       String
+  @@client(appdb)
+}
+
+model Main_posts {
+  id        Int   @id @default(autoincrement())
+  awarded_by  String  
+  awardee    String
+  award_type  String
+  award_name  String
+  points      Int
+  post_time   DateTime
+  desc1       String
+  desc2       String
+  desc3       String
+  desc4       String
+  monetory    Boolean @default(false)
+  @@client(appdb)
+}
+
+model Post {
+  id        Int    @id @default(autoincrement())
+  title     String
+  content   String
+  authorId  Int
+  author    User   @relation(fields: [authorId], references: [id])
+  @@client(appdb)
+}
+
+
+
+
+
+
 
 
 

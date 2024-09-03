@@ -1,6 +1,7 @@
 "use client" // Ensure this is a client component
 
 import { useSession } from 'next-auth/react';
+import { redirect } from 'react/navigation';
 
 export default function UserProfile() {
   const { data: session, status } = useSession();
@@ -10,7 +11,7 @@ export default function UserProfile() {
   }
 
   if (!session) {
-    return <div>Please sign in to view your profile.</div>; // Prompt user to sign in
+    redirect('/api/auth/signin'); // Prompt user to sign in
   }
 
   return (

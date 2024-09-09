@@ -1,0 +1,10 @@
+header
+feed
+footer
+side panel
+create post (Recognize now)
+nominate now
+my profile
+my awards
+coupons
+

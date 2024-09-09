@@ -1,7 +1,7 @@
 "use client" // Ensure this is a client component
 
 import { useSession } from 'next-auth/react';
-import { redirect } from 'react/navigation';
+import { redirect } from 'next/navigation';
 
 export default function UserProfile() {
   const { data: session, status } = useSession();

@@ -13,7 +13,7 @@ model, update js partial pre rendering
 sync AD authentication
 master table
 
-role based portal
+role based options enabled
 
 
 
@@ -130,7 +130,8 @@ model Post {
 
 
 
-
+i want to build a project with nextjs authentication with next-auth(done) ,
+connected db with help of prisma help me further with basic steps, like current user, 
 
 
 

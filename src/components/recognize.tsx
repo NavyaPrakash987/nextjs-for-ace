@@ -3,7 +3,7 @@
 import { Button } from '@/components/ui/button'
 import { Container } from 'lucide-react'
 import { useState } from 'react'
-import ImageUploader from 'react-images-upload'
+import ImageUploader from 'react-dropzone'
 
 export default function Recognize() {
     const [uploadedPictures, setUploadedPictures] = useState([])

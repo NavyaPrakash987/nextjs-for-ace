@@ -3,9 +3,7 @@ import CredentialsProvider from 'next-auth/providers/credentials';
 import { PrismaAdapter } from '@next-auth/prisma-adapter';
 import AzureADProvider from 'next-auth/providers/azure-ad';
 import { PrismaClient } from '@prisma/client';
-
-
-const prisma = new PrismaClient();
+import prisma1 from '../../../../../prisma/db1/client';
 
 interface CustomUser extends User {
   // id: string; // Ensure this is a string
@@ -15,7 +13,7 @@ interface CustomUser extends User {
 }
 
 export const authOptions: NextAuthOptions = {
-  adapter: PrismaAdapter(prisma),
+  adapter: PrismaAdapter(prisma1),
   providers: [
     CredentialsProvider({
       name: "Credentials",
@@ -24,7 +22,7 @@ export const authOptions: NextAuthOptions = {
         password: { label: "Password", type: "password" }
       },
       async authorize(credentials) {
-        const user = await prisma.user.findUnique({
+        const user = await prisma1.user.findUnique({
           where: { email: credentials?.email }
         });
 

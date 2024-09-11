@@ -1,0 +1,79 @@
+ACE Software Resource Documentation
+
+Introduction
+
+The ACE (Awards, Recognition, and Rewards) application is a web-based platform designed to recognize and reward employees within an organization. The application utilizes the company's Microsoft Active Directory (AD) authentication to ensure secure access for authorized personnel.
+
+System Overview
+
+The ACE application is built using Next.js, a popular React-based framework, and utilizes a PostgreSQL database for data storage. The application is designed to be scalable, secure, and user-friendly.
+
+Authentication
+
+The ACE application uses the company's Microsoft AD authentication for user authentication. This ensures that only authorized personnel have access to the application and its features.
+
+User Roles
+
+The ACE application has the following user roles:
+
+Employee: All employees within the organization have access to the application and can view their own awards, recognition, and rewards.
+Manager: Managers have additional permissions to nominate employees for awards and view the awards and recognition received by their team members.
+Administrator: Administrators have full access to the application and can manage user roles, configure settings, and view all awards, recognition, and rewards within the organization.
+Features
+
+The ACE application has the following features:
+
+Awards and Recognition: Employees can view their own awards and recognition, and managers can view the awards and recognition received by their team members.
+Nomination: Managers can nominate employees for awards, and administrators can review and approve nominations.
+Reward: Employees can view their own rewards, and managers can view the rewards received by their team members.
+Settings: Administrators can configure application settings, such as award categories and nomination deadlines.
+Technical Requirements
+
+Server: The ACE application requires a server with the following specifications:
+Operating System: Ubuntu 20.04 or later
+Processor: 2.5 GHz or faster
+Memory: 8 GB or more
+Storage: 256 GB or more
+Database: The ACE application requires a PostgreSQL database with the following specifications:
+Version: 13 or later
+Storage: 256 GB or more
+Client: The ACE application can be accessed from a web browser with the following specifications:
+Browser: Google Chrome, Mozilla Firefox, or Microsoft Edge
+Version: Latest version
+Security
+
+The ACE application has the following security features:
+
+Authentication: The application uses Microsoft AD authentication to ensure secure access for authorized personnel.
+Authorization: The application uses role-based access control to restrict access to features and data based on user roles.
+Data Encryption: The application uses SSL/TLS encryption to protect data transmitted between the client and server.
+Password Policy: The application enforces a strong password policy to ensure secure passwords.
+Maintenance and Support
+
+The ACE application requires regular maintenance and support to ensure optimal performance and security. The following maintenance tasks are recommended:
+
+Software Updates: Regularly update the application and its dependencies to ensure the latest security patches and features.
+Database Backup: Regularly backup the database to ensure data integrity and availability.
+Monitoring: Monitor the application and server performance to identify and resolve issues promptly.
+Troubleshooting
+
+The following troubleshooting steps can be taken to resolve common issues with the ACE application:
+
+Login Issues: Check that the user's Microsoft AD credentials are correct and that the user has the necessary permissions to access the application.
+Data Issues: Check that the data is accurate and up-to-date, and that the database is properly configured.
+Performance Issues: Check that the server and database are properly configured and that the application is optimized for performance.
+Change Management
+
+The following change management process is recommended for the ACE application:
+
+Request: Request changes to the application through a formal change request process.
+Review: Review the change request to ensure that it aligns with the organization's goals and objectives.
+Approval: Approve the change request and assign resources to implement the change.
+Implementation: Implement the change and test the application to ensure that it meets the requirements.
+Deployment: Deploy the updated application to production and monitor its performance.
+Conclusion
+
+The ACE application is a web-based platform designed to recognize and reward employees within an organization. The application utilizes the company's Microsoft AD authentication to ensure secure access for authorized personnel. The application has various features, including awards and recognition, nomination, and reward, and is designed to be scalable, secure, and user-friendly. Regular maintenance and support are required to ensure optimal performance and security.
+
+
+

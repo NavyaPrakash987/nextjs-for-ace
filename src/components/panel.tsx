@@ -4,8 +4,24 @@ import { Avatar, AvatarImage, AvatarFallback } from "./ui/avatar";
 import { Button } from "./ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "./ui/card";
 import { ScrollArea, ScrollBar } from "./ui/scroll-area";
+import { useUser } from "@/app/context/usercontext";
+import { useState } from "react";
 
-export default function SidePanel() {
+
+interface SidePanelProps {
+  openModal:  () => void;
+}
+
+interface SidePanelProps {
+  openModal:  () => void; // Explicitly define the type of openModal
+}
+
+//<SidePanelProps> ({openModal}: SidePanelProps): JSX.Element 
+export default function SidePanel (){
+
+  const { user } = useUser();
+  const current_username = user?.name
+
     const CustomScrollArea = ({ children, className = "" }) => (
         <ScrollArea className={`h-full ${className}`}>
           {children}
@@ -28,10 +44,10 @@ return(
                     <div className="flex items-center space-x-4">
                       <Avatar className="h-20 w-20">
                         <AvatarImage src="/placeholder-avatar.jpg" alt="User" />
-                        <AvatarFallback>JD</AvatarFallback>
+                        <AvatarFallback></AvatarFallback>
                       </Avatar>
                       <div>
-                        <h3 className="text-xl font-semibold">John Doe</h3>
+                        <h3 className="text-xl font-semibold">{current_username}</h3>
                         <p className="text-sm opacity-90">Software Engineer</p>
                         <div className="mt-2 flex items-center">
                           <TrendingUpIcon className="h-4 w-4 mr-1" />
@@ -46,7 +62,7 @@ return(
                     <AwardIcon className="mr-2 h-4 w-4" />
                     Recognize Now
                   </Button>
-                  <Button className="w-full" variant="secondary">
+                  <Button className="w-full" variant="secondary" >
                     <PenToolIcon className="mr-2 h-4 w-4" />
                     Post an Update
                   </Button>
@@ -98,3 +114,5 @@ const scoreboard = [
     { id: 7, name: "Grace Davis", avatar: "/placeholder-avatar.jpg", points: 900, title: "QA Tester" },
     { id: 8, name: "Henry Martinez", avatar: "/placeholder-avatar.jpg", points: 850, title: "Mobile Developer" },
   ]
+
+  

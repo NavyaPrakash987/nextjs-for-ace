@@ -1,7 +1,5 @@
 import { NextResponse } from 'next/server';
-import { PrismaClient as PrismaClient2 } from '../../../../node_modules/@prisma-db-2/client'
-
-const prisma2 = new PrismaClient2();
+import prisma2 from '../../../../prisma/db2/client';
 
 export async function GET() {
   const feed = await prisma2.posts.findMany({

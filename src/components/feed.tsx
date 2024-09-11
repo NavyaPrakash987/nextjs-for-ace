@@ -23,6 +23,7 @@ export default function Feed() {
 
   const { user } = useUser();
   const current_username = user?.name
+  console.log(current_username)
   // const PostsList = () => {
   //   const [posts, setPosts] = useState([]);
 

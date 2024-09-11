@@ -8,7 +8,7 @@ import { redirect } from "next/navigation";
 import SidePanel from "@/components/panel";
 import Feed from "@/components/feed";
 import { useState } from "react";
-import CreatePostModal from "@/components/createposts";
+// import CreatePostModal from "@/components/createposts";
 
 export default async function home_page() {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
